@@ -7,6 +7,14 @@
    font-display: swap;
    src: url('../fonts/OpenSans-Regular.ttf') format('ttf');
 }
+@font-face {
+   font-family: 'Open Sans';
+   font-style: normal;
+   font-weight: 600;
+   font-stretch: 100%;
+   font-display: swap;
+   src: url('../fonts/OpenSans-SemiBold.ttf') format('ttf');
+}
  @font-face {
    font-family: 'Open Sans';
    font-style: normal;
@@ -48,6 +56,9 @@ a{
    color: rgb(252, 255, 252);
    text-decoration: none;
 }
+li{
+   list-style: none;
+}
 a:visited {
    color: rgb(252, 255, 252);
 }
@@ -84,7 +95,6 @@ hr{
 }
 .menu li{
    display: flex;
-   list-style: none;
 }
 .menu a{
    margin: 0 15px;
@@ -110,11 +120,11 @@ hr{
    margin: 0 auto; 
 }
 .first-floor{
-   max-width: 50%;
+   max-width: 45%;
 }
 .first-floor h1{
    line-height: 120%;
-   letter-spacing: 4px;
+   letter-spacing: 1.5px;
    font-size: 60px;
    text-transform: uppercase;
    font-weight: 800;
@@ -122,6 +132,10 @@ hr{
    margin-top: 100px;
    margin-bottom: 0;
 }
+.h-spacing{
+   letter-spacing: 6px;
+}
+
 .first-floor p{
    max-width: 480px;
    font-size: 17px;
@@ -155,26 +169,26 @@ hr{
    cursor: pointer;
 }
 /* Секция второй этаж */
-.section-two{
+.section-two, .section-product{
    max-width: 90vw;
    margin: 90px auto 0;
    display: flex;
    flex-wrap: wrap;
    justify-content: space-between;
 }
-.section-two p{
-   font-size: 16px;
-   line-height: 1.75;
-}
-.second-floor-text{
+.second-floor-text {
    max-width: 45%;
 }
-.second-floor-text h2{
+.second-floor-text h2, .section-product h2{
    color: rgb(88, 88, 88);
    font-size: 42px;
    line-height: 1.3;
    text-transform: uppercase;
    margin-top: 0;
+}
+.section-two p, .section-product p{
+   font-size: 16px;
+   line-height: 1.75;
 }
 .second-floor-text p{
    padding-right: 20%;
@@ -226,9 +240,75 @@ hr{
 }
 .separator{
    height: 1px;
-   margin: 50px auto 100px;
+   margin: 50px auto 0;
    background-color: rgb(236, 236, 236);
    border: none;
+}
+
+/*Секция третий этаж ПРОДУКТС часть свойств записана во второй секции*/
+.product-text{
+   max-width: 40%;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   text-align: center;
+   margin: 0 auto;
+   word-break: break-word;
+}
+.product-text h2{
+   font-weight: 600;
+   margin: 0;
+}
+.red-line{
+   width: 122px;
+   height: 3px;
+   background-color: rgb(255, 45, 45);
+   border: none;
+   margin: 25px 0 75px;
+}
+.product-link{
+   flex-grow: 1;
+   margin-bottom: 60px;
+   text-align: center;
+}
+.product-link ul{
+   max-width: 100%;
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   padding: 0;
+}
+.product-link li{
+   margin: 0 30px;
+}
+.link-no-active, .link-active{
+   color: black;
+   opacity: 0.6;
+   font-size: 22px;
+   font-weight: 600;
+   text-transform: uppercase;
+}
+.link-no-active:hover{
+   color: rgb(255, 45, 45);
+}
+.link-active{
+   color: rgb(255, 45, 45);
+   opacity: 1;
+}
+.product-blocks{
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   margin-bottom: 140px;
+}
+.block-img{
+   flex: 1 1 20%;
+   min-width: 250px;
+   max-width: 100%;
+   height: 291px;
+   margin-bottom: 18px;
+   object-fit: cover;
+   margin-right: 1vw;
 }
 
 /*Секция формы*/
@@ -294,14 +374,9 @@ hr{
    max-width: 58%;
    font-size: 16px;
    line-height: 1.75;
-   margin-bottom: 50px;
 }
-.red-line{
-   width: 122px;
-   height: 3px;
-   background-color: rgb(255, 45, 45);
-   border: none;
-   margin: 0 0 75px;
+.red-line-get{
+   margin-top: 50px;;
 }
 .second-form-wrapper{
    display: flex;
@@ -409,8 +484,12 @@ hr{
 /*Медиа запросы*/
 @media screen and (max-width: 1115px){
    .first-floor h1{
+      letter-spacing: normal;
       font-size: 40px;
       margin-top: 80px;
+   }
+   .h-spacing {
+      letter-spacing: normal;
    }
    .first-floor-image{
       width: 50%;
@@ -425,6 +504,12 @@ hr{
    .service-block{
       max-width: 100%;
    }
+   .product-text{
+      max-width: 60%;
+   }
+   .product-link li{
+      margin: 0 1.5%;
+   }
    .first-form{
       text-align: center;
    }
@@ -435,7 +520,7 @@ hr{
       max-width: 90vw;
    }
    .red-line{
-      margin: 0 auto 72px;
+      margin: 25px auto 72px;
    }
    .second-form-wrapper{
       max-width: 100vw;
@@ -456,7 +541,7 @@ hr{
 }
 @media screen and (max-width:930px){
    .first-floor{
-      min-width: 100%;
+      max-width: 100%;
    }
    .first-floor h1{
      font-size: 35px;
@@ -484,6 +569,13 @@ hr{
       max-width: 45%;
       margin-right: 10px;
    }
+   .product-text{
+      max-width: 80%;
+   }
+   .product-link ul{
+      max-width: 200px;
+      margin: 0 auto;
+   }
    .input-one{
       width: 100%;
       margin-right: 0;
@@ -496,7 +588,7 @@ hr{
 @media screen and (max-width:650px) {
    .first-floor h1{
       width: 90vw;
-      font-size: 25px;
+      font-size: 30px;
       letter-spacing: normal;
    }
    .first-floor p{
@@ -518,12 +610,24 @@ hr{
       text-align: initial;
       word-break: break-word;
    }
-   .second-floor-text h2{
+   .second-floor-text h2, .product-text h2{
       font-size: 30px;
    }
    .service-block{
       max-width: 100%;
       word-break: break-word;
+   }
+   .product-text{
+      justify-content: flex-start;
+      text-align: initial;
+      max-width: 90vw;
+   }
+   .section-product p {
+      margin-bottom: 50px;
+      line-height: normal;
+   }
+   .block-img{
+      min-width: 100%;
    }
    .first-form{
       text-align: initial;
