@@ -179,14 +179,18 @@ hr{
 .second-floor-text {
    max-width: 45%;
 }
-.second-floor-text h2, .section-product h2{
+.second-floor-text h2, 
+.section-product h2,
+.team-text h2{
    color: rgb(88, 88, 88);
    font-size: 42px;
    line-height: 1.3;
    text-transform: uppercase;
    margin-top: 0;
 }
-.section-two p, .section-product p{
+.section-two p, 
+.section-product p,
+.section-team p{
    font-size: 16px;
    line-height: 1.75;
 }
@@ -214,7 +218,8 @@ hr{
    justify-content: space-between;
    margin-left: 10px;
 }
-.second-floor-services h3{
+.second-floor-services h3,
+.account-text h3{
    font-size: 22px;
    letter-spacing: 1.5px;
 }
@@ -288,8 +293,15 @@ hr{
    font-weight: 600;
    text-transform: uppercase;
 }
+.link-no-active:visited{
+   color: rgb(0, 0, 0);
+}
+.link-active:visited{
+   color: rgb(255, 45, 45);
+}
 .link-no-active:hover{
    color: rgb(255, 45, 45);
+   opacity: 1;
 }
 .link-active{
    color: rgb(255, 45, 45);
@@ -299,7 +311,7 @@ hr{
    display: flex;
    justify-content: space-between;
    flex-wrap: wrap;
-   margin-bottom: 140px;
+   margin-bottom: 100px;
 }
 .block-img{
    flex: 1 1 20%;
@@ -309,6 +321,94 @@ hr{
    margin-bottom: 18px;
    object-fit: cover;
    margin-right: 1vw;
+}
+
+/* Секция Команда */
+.section-team{
+   max-width: 90vw;
+   margin: 0 auto 100px;
+}
+.team-text{
+   max-width: 450px;
+}
+.team-account{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+.main-account{
+   width: 321px;
+   height: 458px;
+   object-fit: cover;
+}
+.other-accounts-wrapper{
+   display: flex;
+   flex-direction: column;
+   max-width: 67%;
+   margin: 0;
+   justify-content: space-between;
+}
+.account-text{
+   max-width: 80%;
+}
+.account-text h3{
+   font-size: 30px;
+   text-transform: uppercase;
+   font-weight: 600;
+   opacity: 0.8;
+   margin-bottom: 16px;
+   margin-top: 0;
+}
+.account-text p{
+   margin-bottom: 35px;
+}
+.account-menu a{
+   color: rgb(0, 0, 0);
+   font-size: 18px;
+   font-style: italic;
+   margin-right: 30px;
+}
+.account-menu a:visited{
+   color: black;
+}
+.account-menu a:hover{
+   color: black;
+   text-decoration: underline;
+}
+.account-profile{
+   display: flex;
+}
+.profile-card{
+   flex: 1 1 20%;
+   margin-right: 2%;
+   position: relative;
+   display: flex;
+   align-items: flex-end;
+}
+.show-name{
+   display: flex;
+   visibility: hidden;
+   justify-content: center;
+   align-items: center;
+   color: #ffffff;
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   height: 37px;
+   margin: 0;
+   text-align: center;
+   background-color: #000;
+   opacity: 0.5;
+}
+.show-img{
+   max-width: 190px;
+   height: 214px;
+   object-fit: cover;
+   cursor: pointer;
+   margin-top: 20px;
+}
+.profile-card:hover > .show-name{
+   visibility: visible;
 }
 
 /*Секция формы*/
@@ -510,6 +610,24 @@ hr{
    .product-link li{
       margin: 0 1.5%;
    }
+   .main-account{
+      margin-right: 2%;
+   }
+   .account-text{
+      max-width: 100%;
+   }
+   .other-accounts-wrapper{
+      max-width: 60%;
+   }
+   .account-profile{
+      flex-wrap: wrap;
+   }
+   .profile-card{
+      flex: none;
+   }
+   .show-img {
+      max-width: 175px;
+   }
    .first-form{
       text-align: center;
    }
@@ -576,6 +694,11 @@ hr{
       max-width: 200px;
       margin: 0 auto;
    }
+   .other-accounts-wrapper{
+      max-width: 100%;
+      margin-top: 30px;
+      
+   }
    .input-one{
       width: 100%;
       margin-right: 0;
@@ -628,6 +751,17 @@ hr{
    }
    .block-img{
       min-width: 100%;
+   }
+   .main-account {
+      margin-right: 0;
+      max-width: 100%;
+      height: 281px;
+   }
+   .account-menu a {
+      margin-right: 10px;
+   }
+   .account-profile{
+      justify-content: space-around;
    }
    .first-form{
       text-align: initial;
